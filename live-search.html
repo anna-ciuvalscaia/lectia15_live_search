@@ -1,0 +1,56 @@
+<body>
+
+    <style>
+        body{
+            background-color: #333;
+        }
+        #input_search {
+            padding: 1em;
+            width: 90%;
+        }
+        #div_output {
+          color: white;
+          line-height: 1.5em;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+    
+    <label>
+        <input 
+        id="input_search"
+        type="text"
+        placeholder="type a name here..."
+        onkeyup="search()"
+        >
+    </label>
+    <div id="div_output"></div>
+
+    <script>
+
+        let people = [
+            "MARIA",
+            "NATALIA",
+            "CEZAR",
+            "LEONID",
+            "TATIANA",
+            "DANIEL",
+            "DAMIR"
+        ]
+
+       function search() {
+           // process
+          let fragment = input_search.value.trim().toUpperCase()
+
+           // print
+           div_output.innerHTML = ``
+            for(let i = 0; i < people.length; i++){
+                if( people[i].startsWith(fragment) ) {
+                div_output.innerHTML += `${people[i]}<br>`
+                }
+                
+            }
+       } 
+
+       
+    </script>
+</body>
